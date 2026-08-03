@@ -12,6 +12,9 @@ import Products from "./pages/Products";
 
 import Sidebar from "./components/Sidebar";
 import CreateOrder from "./pages/CreateOrder";
+import AddLead from "./pages/AddLead";
+import Leads from "./pages/Leads";
+
 
 
 function App() {
@@ -97,8 +100,9 @@ function App() {
           </>
         } 
       />
+      <Route path="/add-lead" element={<AddLead/>}/>
 
-
+<Route path="/leads" element={<Leads />} />
 
       
       <Route 

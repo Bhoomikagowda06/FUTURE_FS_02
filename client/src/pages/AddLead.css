@@ -1,0 +1,30 @@
+.add-lead-page{
+    padding:30px;
+    margin-left:250px;
+}
+
+.add-lead-page h1{
+    margin-bottom:20px;
+}
+
+.add-lead-page form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    width:400px;
+}
+
+.add-lead-page input{
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+.add-lead-page button{
+    padding:12px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}

@@ -7,7 +7,8 @@ import {
     FaCog,
     FaSignOutAlt,
     
-    FaBox
+    FaBox,
+    FaUserTie
 } from "react-icons/fa";
 
 import { useNavigate, useLocation } from "react-router-dom";
@@ -34,6 +35,11 @@ function Sidebar(){
             icon:<FaUsers/>,
             path:"/users"
         },
+        {
+    name:"Leads",
+    icon:<FaUserTie/>,
+    path:"/leads"
+},
 
         {
             name:"Analytics",
@@ -41,17 +47,18 @@ function Sidebar(){
             path:"/analytics"
         },
 
-        {
-            name:"Settings",
-            icon:<FaCog/>,
-            path:"/settings"
-        },
+        
       
 {
     name:"Products",
     icon:<FaBox/>,
     path:"/products"
 },
+{
+            name:"Settings",
+            icon:<FaCog/>,
+            path:"/settings"
+        },
     ];
 
 

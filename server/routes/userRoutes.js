@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const {auth, adminOnly} = require("../middleware/authMiddleware");
 
 const {
     register,
@@ -24,7 +25,7 @@ router.post("/add", addUser);
 
 router.put("/:id", updateUser);
 
-router.delete("/:id", deleteUser);
+router.delete("/:id", auth, adminOnly, deleteUser);
 router.get("/stats", getStats);
 router.get("/growth", getUserGrowth);
 router.get("/test", (req,res)=>{

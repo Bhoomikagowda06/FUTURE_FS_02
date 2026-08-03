@@ -9,12 +9,10 @@ function Login() {
 
   const navigate = useNavigate();
 
-
   const [form, setForm] = useState({
     email: "",
     password: ""
   });
-
 
 
   const handleChange = (e) => {
@@ -27,15 +25,17 @@ function Login() {
   };
 
 
-
   const handleLogin = async (e) => {
 
     e.preventDefault();
 
-
     try {
 
       const res = await API.post("/users/login", form);
+console.log("FULL RESPONSE:", res.data);
+console.log("USER:", res.data.user);
+console.log("ROLE:", res.data.user.role);
+      console.log("LOGIN RESPONSE:", res.data);
 
 
       localStorage.setItem(
@@ -44,20 +44,21 @@ function Login() {
       );
 
 
-      alert("Login successful");
+     const { token, user } = res.data;
 
+localStorage.setItem("token", token);
+localStorage.setItem("role", user.role);
+      alert("Login successful");
 
       navigate("/dashboard");
 
 
-    } 
-    catch(error) {
+    } catch(error) {
 
       console.log(error.response?.data);
 
-
       alert(
-        error.response?.data?.message || 
+        error.response?.data?.message ||
         "Login failed"
       );
 
@@ -66,21 +67,16 @@ function Login() {
   };
 
 
-
   return (
 
     <div className="login-page">
-
 
       <div className="login-card">
 
 
         <div className="logo-circle">
-
           <FaUserShield />
-
         </div>
-
 
 
         <h1>
@@ -88,13 +84,9 @@ function Login() {
         </h1>
 
 
-
         <p className="subtitle">
-
           Mini CRM Management System
-
         </p>
-
 
 
 
@@ -103,67 +95,41 @@ function Login() {
 
           <div className="input-box">
 
-
             <FaEnvelope />
 
-
             <input
-
               type="email"
-
               name="email"
-
               placeholder="Email Address"
-
               value={form.email}
-
               onChange={handleChange}
-
               required
-
             />
 
-
           </div>
-
 
 
 
           <div className="input-box">
 
-
             <FaLock />
 
-
             <input
-
               type="password"
-
               name="password"
-
               placeholder="Password"
-
               value={form.password}
-
               onChange={handleChange}
-
               required
-
             />
-
 
           </div>
 
 
 
-
-
           <button className="login-btn">
-
             Sign In
-
           </button>
-
 
 
         </form>
@@ -171,26 +137,19 @@ function Login() {
 
 
 
-
         <p className="register-link">
-
 
           Don't have an account?
 
-
           <Link to="/register">
-
             Register
-
           </Link>
-
 
         </p>
 
 
 
       </div>
-
 
     </div>
 

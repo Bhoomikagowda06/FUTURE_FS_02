@@ -42,27 +42,34 @@ const getUsers = async()=>{
 
 
 // Delete User
-const deleteUser = async(id)=>{
+const deleteUser = async (id) => {
 
-    try{
+  const confirmDelete = window.confirm(
+    "Are you sure you want to delete this user?"
+  );
 
-        await API.delete(`/users/${id}`);
+  if (!confirmDelete) return;
 
-        alert("Customer Deleted");
+  try {
 
-        getUsers();
+    await API.delete(`/users/${id}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`
+      }
+    });
 
-    }
-    catch(error){
+    setUsers(users.filter(user => user._id !== id));
 
-        console.log(error);
-        alert("Delete Failed");
+    alert("✅ User deleted successfully!");
 
-    }
+  } catch (error) {
+
+    alert("❌ Failed to delete user.");
+    console.log(error);
+
+  }
 
 };
-
-
 
 useEffect(()=>{
 
@@ -221,13 +228,13 @@ onClick={()=>setEditUser(user)}
 
 
 
-<button
-onClick={()=>deleteUser(user._id)}
->
-
-<FaTrash/>
-
-</button>
+{localStorage.getItem("role") === "admin" && (
+  <button
+    onClick={()=>deleteUser(user._id)}
+  >
+    <FaTrash/>
+  </button>
+)}
 
 
 </td>

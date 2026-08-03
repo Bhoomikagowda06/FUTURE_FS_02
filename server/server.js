@@ -4,6 +4,7 @@ const express = require("express");
 const cors = require("cors");
 const dns = require("dns");
 const connectDB = require("./config/db");
+const leadRoutes = require("./routes/leadRoutes");
 
 
 
@@ -34,6 +35,7 @@ app.use("/uploads", express.static("uploads"));
 app.use("/api/users", userRoutes);
 app.use("/api/activity", activityRoutes);
 app.use("/api/orders",orderRoutes);
+app.use("/api/leads", leadRoutes);
 app.use(
     "/api/analytics",
     analyticsRoutes

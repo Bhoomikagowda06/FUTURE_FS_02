@@ -9,7 +9,7 @@ const jwt = require("jsonwebtoken");
 const register = async (req, res) => {
     try {
 
-        const { name, email, password } = req.body;
+        const {name,email,password,role}=req.body;
 
         const existingUser = await User.findOne({ email });
 
@@ -22,10 +22,11 @@ const register = async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
 
         const user = await User.create({
-            name,
-            email,
-            password: hashedPassword
-        });
+    name,
+    email,
+    password:hashedPassword,
+    role: role || "employee"
+});
 
         res.status(201).json({
             message: "Register successful",
@@ -51,6 +52,12 @@ const login = async (req, res) => {
 
         const user = await User.findOne({ email });
 
+console.log("========== LOGIN ==========");
+console.log(user);
+console.log("ROLE:", user?.role);
+console.log("DATABASE ID:", user?._id.toString());
+console.log("===========================");
+
         if (!user) {
             return res.status(404).json({
                 message: "User not found"
@@ -71,16 +78,21 @@ const login = async (req, res) => {
 
 
         const token = jwt.sign(
-            { id: user._id },
-            process.env.JWT_SECRET,
-            { expiresIn:"1d" }
-        );
+    { 
+        id: user._id,
+        role: user.role
+    },
+    process.env.JWT_SECRET,
+    { expiresIn:"1d" }
+);
 
 
         res.json({
             message:"Login successful",
             token,
+            role: user.role,
             user
+            
         });
 
 
@@ -123,19 +135,32 @@ const getUsers = async (req,res)=>{
 // Add Customer
 const addUser = async (req, res) => {
     try {
-        const { name, email } = req.body;
+        const {
+    name,
+    email,
+    phone,
+    source,
+    status,
+    notes,
+    followUpDate
+} = req.body;
 
-        const hashedPassword = await bcrypt.hash("customer123", 10);
+const hashedPassword = await bcrypt.hash("customer123", 10);
 
-        const user = await User.create({
-            name,
-            email,
-            password: hashedPassword
-        });
+const user = await User.create({
+    name,
+    email,
+    password: hashedPassword,
+    phone,
+    source,
+    status,
+    notes,
+    followUpDate
+});
 
         // ✅ Save activity
         await Activity.create({
-            message: `New customer added: ${user.name}`
+            message: `New lead added: ${user.name}`
         });
 
         res.status(201).json({
