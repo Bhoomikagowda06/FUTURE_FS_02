@@ -1,0 +1,77 @@
+.create-order-page{
+
+    min-height:100vh;
+
+    margin-left:260px;
+
+    padding:100px 40px;
+
+    background:linear-gradient(
+        135deg,
+        #020617,
+        #1e3a8a
+    );
+
+    color:white;
+
+    text-align:center;
+
+}
+
+
+
+.create-order-page img{
+
+    width:250px;
+
+    height:250px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    margin:20px;
+
+}
+
+
+
+.create-order-page input{
+
+    display:block;
+
+    width:350px;
+
+    padding:14px;
+
+    margin:15px auto;
+
+    border-radius:12px;
+
+    border:none;
+
+}
+
+
+
+.create-order-page button{
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #4f46e5
+    );
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+}

@@ -1,0 +1,33 @@
+.page{
+
+    min-height:100vh;
+
+    padding:120px 40px;
+
+    margin-left:260px;
+
+    background:#020617;
+
+    color:white;
+
+}
+
+
+.page h1{
+
+    font-size:36px;
+
+    color:#60a5fa;
+
+    margin-bottom:15px;
+
+}
+
+
+.page p{
+
+    color:#cbd5e1;
+
+    font-size:18px;
+
+}

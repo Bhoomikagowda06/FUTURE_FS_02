@@ -1,0 +1,106 @@
+.analytics-charts{
+
+    width:100%;
+
+}
+
+
+.chart-card{
+
+     background: linear-gradient(135deg,#c7cde5,#3f56a5);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    box-shadow:0 15px 35px rgba(0,0,0,0.3);
+
+}
+
+
+.chart-card.large{
+
+    margin-bottom:25px;
+
+}
+
+
+
+.chart-head{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.chart-head h3,
+.chart-card h3{
+
+    color:rgb(16, 1, 1);
+
+    font-size:18px;
+
+}
+
+
+
+.chart-head span{
+
+    color:rgb(18, 1, 1);
+
+    background:#2563eb;
+
+    padding:8px 15px;
+
+    border-radius:20px;
+
+}
+
+
+
+.bottom-charts{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+
+}
+
+
+
+.recharts-text{
+
+    fill:#01060d;
+
+}
+
+
+
+.recharts-cartesian-grid line{
+
+    stroke:rgba(255,255,255,0.1);
+
+}
+
+
+
+@media(max-width:900px){
+
+    .bottom-charts{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

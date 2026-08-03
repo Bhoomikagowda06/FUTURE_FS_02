@@ -1,0 +1,280 @@
+.users-page{
+
+    min-height:100vh;
+
+    margin-left:260px;
+
+    padding:120px 35px;
+
+    background:#020617;
+
+    background:linear-gradient(135deg,rgb(212, 212, 222),#1e3a8a);
+
+}
+
+
+
+
+.users-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.users-header h1{
+    color:#000;
+    font-size:42px;
+    font-weight:800;
+}
+
+.users-header p{
+    color:#111827;
+    font-size:18px;
+    font-weight:500;
+}
+
+
+
+.add-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    padding:14px 22px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+}
+
+
+
+.users-card{
+
+    background:linear-gradient(135deg,rgb(212, 212, 222),#1e3a8a);
+
+    color:#0f172a;
+
+    padding:25px;
+
+    border-radius:20px;
+
+}
+
+
+
+.user-search{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:#f1f5f9;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.user-search input{
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    width:100%;
+
+}
+
+
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+table th{
+    color:#000;
+    font-weight:700;
+    font-size:20px;
+}
+table td{
+    color:#000;
+    font-weight:600;
+    font-size:18px;
+}
+
+
+th,td{
+
+    padding:16px;
+
+    text-align:left;
+
+}
+
+
+
+tr{
+
+    border-bottom:1px solid #e2e8f0;
+
+}
+.search-box input{
+    color:#000;
+    font-weight:600;
+}
+
+.search-box input::placeholder{
+    color:#555;
+    font-weight:500;
+}tbody tr:hover{
+    background:#f3f4f6;
+    transition:0.3s;
+}
+
+
+
+.active,
+.new{
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+}
+
+
+
+.active{
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+}
+
+
+
+.new{
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+}
+.modal-bg{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+right:0;
+
+bottom:0;
+
+background:rgba(0,0,0,.6);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+z-index:500;
+
+}
+
+
+
+.modal{
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+width:400px;
+
+}
+
+
+
+.modal input{
+
+width:100%;
+
+padding:14px;
+
+margin:10px 0;
+
+border-radius:10px;
+
+border:1px solid #ddd;
+
+}
+
+
+
+.modal button{
+
+width:100%;
+
+padding:14px;
+
+background:#2563eb;
+
+color:white;
+
+border:none;
+
+border-radius:10px;
+
+}.active{
+
+    background:#16a34a;
+    color:#fff;
+
+    padding:7px 15px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}

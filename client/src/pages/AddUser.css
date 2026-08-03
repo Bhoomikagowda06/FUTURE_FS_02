@@ -1,0 +1,104 @@
+.add-user-page{
+
+    min-height:100vh;
+
+    margin-left:260px;
+
+    padding:120px 40px;
+
+    background:#02104a;
+
+    color:linear-gradient(135deg,rgb(212, 212, 222),#1e3a8a);
+
+}
+
+
+
+.add-user-page h1{
+
+    font-size:34px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.add-user-page form{
+
+    background:linear-gradient(135deg,rgb(212, 212, 222),#1e3a8a);
+
+    padding:30px;
+
+    border-radius:20px;
+
+    width:400px;
+
+}
+
+
+
+.add-user-page input{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:15px;
+
+    border:1px solid #e0d8d8;
+
+    border-radius:10px;
+
+    outline:none;
+
+}
+
+
+
+.add-user-page button{
+
+    width:100%;
+
+    padding:14px;
+
+    background:#2563eb;
+
+    color:rgb(20, 2, 2);
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+.success-message{
+
+    background:#dcfce7;
+    color:#166534;
+    padding:12px 18px;
+    border-radius:10px;
+    margin-bottom:20px;
+    font-weight:600;
+    text-align:center;
+    border:1px solid #86efac;
+
+    animation:showMessage 0.3s ease;
+
+}
+
+
+@keyframes showMessage{
+
+    from{
+        opacity:0;
+        transform:translateY(-10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
