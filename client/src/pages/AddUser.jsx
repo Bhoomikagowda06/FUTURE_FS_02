@@ -20,9 +20,10 @@ const saveUser = async(e) => {
         const res = await API.post("/users/add", form);
 
         console.log(res.data);
-        console.log("MESSAGE SET");
+        
 
         setMessage("Customer Saved Successfully ✅");
+        console.log("MESSAGE SET");
 
         setTimeout(()=>{
             navigate("/users");

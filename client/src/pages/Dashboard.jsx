@@ -45,6 +45,7 @@ users.length > 0 ? users.length * 5 : 0;
       id:1,
       text:"Welcome to Mini CRM!",
       time:"Just now"
+    
     }
   ]
 );
