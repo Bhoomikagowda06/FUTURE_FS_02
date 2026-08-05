@@ -1,10 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL:
-    process.env.NODE_ENV === "production"
-      ? "https://future-fs-02-9oj2.onrender.com/api"
-      : "http://localhost:5000/api",
+  baseURL: "https://future-fs-02-9oj2.onrender.com/api",
 });
 
 export default API;
