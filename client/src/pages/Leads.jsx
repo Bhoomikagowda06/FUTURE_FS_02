@@ -198,6 +198,7 @@ onChange={(e)=>setSearch(e.target.value)}
 <th>Source</th>
 <th>Status</th>
 <th>Follow Up</th>
+<th>Notes</th>
 <th>Action</th>
 
 </tr>
@@ -261,6 +262,7 @@ new Date(lead.followUpDate).toLocaleDateString()
 }
 
 </td>
+<td>{lead.notes || "No Notes"}</td>
 
 
 
