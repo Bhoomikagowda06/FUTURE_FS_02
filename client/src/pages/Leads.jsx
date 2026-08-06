@@ -38,25 +38,28 @@ const fetchLeads = async()=>{
 
 
 // Convert Lead
-const convertLead = async(id)=>{
+const convertLead = async (id) => {
 
-    try{
+  if (role !== "admin") {
+    alert("Only administrators can convert leads into users.");
+    return;
+  }
 
-        await API.post(`/leads/convert/${id}`);
+  try {
 
-        alert("Lead Converted Successfully ✅");
+    await API.post(`/leads/convert/${id}`);
 
-        fetchLeads();
+    alert("Lead Converted Successfully ✅");
 
-    }
-    catch(error){
+    fetchLeads();
 
-        console.log(error.response?.data || error.message);
+  } catch (error) {
 
-    }
+    console.log(error.response?.data || error.message);
+
+  }
 
 };
-
 
 
 // Delete Lead
@@ -91,6 +94,16 @@ const deleteLead = async(id)=>{
         console.log(error.response?.data || error.message);
 
     }
+
+};
+const handleDeleteLead = (id) => {
+
+  if (role !== "admin") {
+    alert("Only administrators can delete leads.");
+    return;
+  }
+
+  deleteLead(id);
 
 };
 
@@ -290,15 +303,10 @@ role === "admin" &&
 
 
 <button
-
 className="delete-btn"
-
-onClick={()=>deleteLead(lead._id)}
-
+onClick={() => handleDeleteLead(lead._id)}
 >
-
-<FaTrash />
-
+  <FaTrash />
 </button>
 
 

@@ -71,7 +71,16 @@ const deleteUser = async (id) => {
   }
 
 };
+const role = localStorage.getItem("role");
 
+const handleDeleteUser = (id) => {
+  if (role !== "admin") {
+    alert("Only administrators can delete users.");
+    return;
+  }
+
+  deleteUser(id);
+};
 useEffect(()=>{
 
     getUsers();
@@ -237,14 +246,9 @@ onClick={()=>setEditUser(user)}
 
 
 
-{localStorage.getItem("role") === "admin" && (
-  <button
-    onClick={()=>deleteUser(user._id)}
-  >
-    <FaTrash/>
-  </button>
-)}
-
+<button onClick={() => handleDeleteUser(user._id)}>
+  <FaTrash />
+</button>
 
 </td>
 
