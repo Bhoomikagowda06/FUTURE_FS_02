@@ -15,6 +15,7 @@ const [showModal,setShowModal] = useState(false);
 const [editUser,setEditUser] = useState(null);
 
 const navigate = useNavigate();
+const role = localStorage.getItem("role");
 
 
 const [form,setForm] = useState({
@@ -107,6 +108,14 @@ const addCustomer = async(e)=>{
     }
 
 };
+const handleAddUser = () => {
+  if (role !== "admin") {
+    alert("Only administrators can add users.");
+    return;
+  }
+
+  navigate("/add-user");
+};
 
 
 
@@ -132,9 +141,9 @@ return (
     </div>
 
     <button
-      className="add-btn"
-      onClick={() => navigate("/add-user")}
-    >
+  className="add-btn"
+  onClick={handleAddUser}
+>
       <FaPlus />
       Add User
     </button>
