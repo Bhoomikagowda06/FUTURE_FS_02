@@ -281,37 +281,19 @@ new Date(lead.followUpDate).toLocaleDateString()
 
 <td>
 
+  <button
+    className="convert-btn"
+    onClick={() => convertLead(lead._id)}
+  >
+    Convert
+  </button>
 
-<button
-
-className="convert-btn"
-
-onClick={()=>convertLead(lead._id)}
-
->
-
-Convert
-
-</button>
-
-
-
-
-{
-
-role === "admin" &&
-
-
-<button
-className="delete-btn"
-onClick={() => handleDeleteLead(lead._id)}
->
-  <FaTrash />
-</button>
-
-
-}
-
+  <button
+    className="delete-btn"
+    onClick={() => handleDeleteLead(lead._id)}
+  >
+    <FaTrash />
+  </button>
 
 </td>
 
