@@ -60,8 +60,6 @@ const convertLead = async (id) => {
   }
 
 };
-
-
 // Delete Lead
 const deleteLead = async(id)=>{
 
@@ -94,16 +92,6 @@ const deleteLead = async(id)=>{
         console.log(error.response?.data || error.message);
 
     }
-
-};
-const handleDeleteLead = (id) => {
-
-  if (role !== "admin") {
-    alert("Only administrators can delete leads.");
-    return;
-  }
-
-  deleteLead(id);
 
 };
 
@@ -281,19 +269,42 @@ new Date(lead.followUpDate).toLocaleDateString()
 
 <td>
 
-  <button
-    className="convert-btn"
-    onClick={() => convertLead(lead._id)}
-  >
-    Convert
-  </button>
 
-  <button
-    className="delete-btn"
-    onClick={() => handleDeleteLead(lead._id)}
-  >
-    <FaTrash />
-  </button>
+<button
+
+className="convert-btn"
+
+onClick={()=>convertLead(lead._id)}
+
+>
+
+Convert
+
+</button>
+
+
+
+
+{
+
+role === "admin" &&
+
+
+<button
+
+className="delete-btn"
+
+onClick={()=>deleteLead(lead._id)}
+
+>
+
+<FaTrash />
+
+</button>
+
+
+}
+
 
 </td>
 

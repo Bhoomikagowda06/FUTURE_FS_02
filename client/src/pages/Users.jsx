@@ -71,7 +71,7 @@ const deleteUser = async (id) => {
   }
 
 };
-const role = localStorage.getItem("role");
+
 
 const handleDeleteUser = (id) => {
   if (role !== "admin") {
