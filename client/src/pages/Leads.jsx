@@ -58,7 +58,6 @@ const convertLead = async (id) => {
     console.log(error.response?.data || error.message);
 
   }
-
 };
 // Delete Lead
 const deleteLead = async(id)=>{
