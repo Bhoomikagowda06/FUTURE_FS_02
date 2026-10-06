@@ -15,7 +15,7 @@ function Navbar() {
     const [notifications,setNotifications] = useState([
   {
     id:1,
-    message:"Welcome to Mini CRM",
+    message:"Welcome to employee",
     time:"Just now"
   }
 ]);
